@@ -19,7 +19,7 @@ class DifficultyType extends AbstractType
     public function configureOptions(OptionsResolver $resolver): void
     {
         $resolver->setDefaults([
-            'data_class' => Difficulty::class,
+            'data_class' => Difficulty::class,:
         ]);
     }
 }
