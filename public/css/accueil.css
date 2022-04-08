@@ -1,0 +1,236 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*------------------------hero----------------------------------*/
+
+.hero_accueil{
+    position: relative;
+    height: 75vh;
+}
+
+video{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.text_video{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center; 
+}
+
+h1{
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 60px;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.btn_decouvrir{
+    display: block;
+    margin: 0 auto;
+    width: 160px;
+    color: white;
+    text-decoration: none;
+    font-family: 'Source Sans Pro', sans-serif;
+    line-height: 50px;
+    font-size: 20px;
+    border: 2px solid rgb(255, 255, 255);
+    background-color: rgba(14, 14, 14, 0.418);
+    text-align: center;
+    margin-top: 30px;
+}
+
+.btn_decouvrir:hover{
+    background-color: black;
+    border: 2px solid rgb(0, 0, 0);
+}
+
+/*--------------------------nous suivre--------------------------*/
+
+.nous_suivre{
+    width: 50px;
+    position: fixed;
+    top: 350px;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    background-color: black;
+}
+
+.para_noussuivre{
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    color: white;
+    font-family: 'Source Sans Pro', sans-serif;
+
+}
+
+.icones_noussuivre{
+    width: 30px;
+    padding-left: 10px;
+    padding-top: 20px;
+}
+/*-------------------------nouveauté-----------------------------*/
+
+.para_nouveautes{
+    width: 450px;
+    color: #000000;
+    font-size: 45px;
+    font-family: 'Lobster', cursive;
+    text-align: center;
+    line-height: 100px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    margin: 0 auto;
+}
+
+/*------------------------grid-------------------------------*/
+.contener_grid{
+    display: flex;
+    justify-content: center;
+}
+
+.grid_accueil{
+    display: grid;
+    grid-template-columns: 500px 500px;
+    grid-template-rows: 250px 250px;
+    gap: 15px;
+}
+
+.img_1{
+    overflow:hidden;
+    width:100%;
+
+    grid-column-start: 1;
+    grid-column-end: 2;
+
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+
+.img_2{
+    overflow:hidden;
+    width:100%;
+
+    grid-column-start: 2;
+    grid-column-end: 3;
+
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+
+.img_3{
+    overflow:hidden;
+    width:100%;
+
+    grid-column-start: 2;
+    grid-column-end: 3;
+
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+
+.img_grid{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.contener_img{
+    position: relative;
+}
+
+.text_img{
+    width: 260px;
+    color: white;
+    font-family: 'Source Sans Pro', sans-serif;
+    text-decoration: none;
+    font-size: 20px;
+    line-height: 50px;
+    border: 2px solid white;
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 0 30px 0 30px; 
+}
+
+.text_img2{
+    color: white;
+    font-family: 'Source Sans Pro', sans-serif;
+    text-decoration: none;
+    font-size: 20px;
+    line-height: 50px;
+    border: 2px solid white;
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 0 30px 0 30px; 
+}
+
+
+
+.text_img:hover, .text_img2:hover{
+    background-color: black;
+    border: 2px solid rgb(0, 0, 0);
+}
+
+/*---------------------anim zoom image------------------*/
+
+.zoom{
+    transition:0.5s;
+}
+
+.zoom:hover{
+    transform : scale(1.2);
+}
+
+/*------------------------------------------------------*/
+.wrapper_contener-bouton{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.contener_bouton{
+    padding-top: 100px;
+    text-align: center;
+}
+
+h2{
+    color: #000000;
+    font-size: 45px;
+    font-family: 'Lobster', cursive;
+}
+
+.btn_choisir{
+    display: block;
+    margin: 50px auto 100px auto;
+    width: 300px;
+    font-family: 'Source Sans Pro', sans-serif;
+    color: black;
+    font-size: 20px;
+    text-decoration: none;
+    line-height: 50px;
+    font-weight: bold;
+    border: 2px solid rgb(0, 0, 0);
+    text-align: center;
+}
+
+.btn_choisir:hover{
+    background-color: #000000;
+    color: rgb(255, 255, 255);
+}
+

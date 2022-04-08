@@ -6,6 +6,7 @@ use App\Repository\HikeRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 #[ORM\Entity(repositoryClass: HikeRepository::class)]
 class Hike
@@ -13,35 +14,49 @@ class Hike
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column(type: 'integer')]
+    #[Groups('hike:read')]
     private $id;
 
     #[ORM\Column(type: 'string', length: 255)]
+    #[Groups('hike:read')]
     private $name;
 
     #[ORM\Column(type: 'text', nullable: true)]
+    #[Groups('hike:read')]
     private $Content;
 
     #[ORM\Column(type: 'float', nullable: true)]
+    #[Groups('hike:read')]
     private $length;
 
     #[ORM\Column(type: 'float', nullable: true)]
+    #[Groups('hike:read')]
     private $duration;
 
     #[ORM\Column(type: 'float', nullable: true)]
+    #[Groups('hike:read')]
     private $elevation_gain;
 
     #[ORM\Column(type: 'float', nullable: true)]
+    #[Groups('hike:read')]
     private $elevation_loss;
 
     #[ORM\Column(type: 'string', length: 255, nullable: true)]
+    #[Groups('hike:read')]
     private $gps_coordonate;
 
     #[ORM\ManyToOne(targetEntity: Difficulty::class, inversedBy: 'hikes')]
     #[ORM\JoinColumn(nullable: false)]
+    #[Groups('hike:read')]
     private $difficulty;
 
     #[ORM\OneToMany(mappedBy: 'hike', targetEntity: HikeImages::class)]
+    #[Groups('hike:read')]
     private $hikeImages;
+
+    #[ORM\Column(type: 'string', length: 255, nullable: true)]
+    #[Groups('hike:read')]
+    private $nameSlugger;
 
     public function __construct()
     {
@@ -175,6 +190,18 @@ class Hike
                 $hikeImage->setHike(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getNameSlugger(): ?string
+    {
+        return $this->nameSlugger;
+    }
+
+    public function setNameSlugger(?string $nameSlugger): self
+    {
+        $this->nameSlugger = $nameSlugger;
 
         return $this;
     }

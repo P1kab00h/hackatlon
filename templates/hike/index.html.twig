@@ -8,22 +8,20 @@
     <table class="table">
         <thead>
             <tr>
-                <th>Id</th>
-                <th>Name</th>
-                <th>Content</th>
+                <th>Nom</th>
+                <th>Description</th>
                 <th>Difficultée</th>
-                <th>Length</th>
-                <th>Duration</th>
-                <th>Elevation_gain</th>
-                <th>Elevation_loss</th>
-                <th>Gps_coordonate</th>
+                <th>Distance</th>
+                <th>Durée</th>
+                <th>Dénivelée positif</th>
+                <th>Dénivelée négatif</th>
+                <th>Coordonnées GPS</th>
                 <th>actions</th>
             </tr>
         </thead>
         <tbody>
         {% for hike in hikes %}
             <tr>
-                <td>{{ hike.id }}</td>
                 <td>{{ hike.name }}</td>
                 <td>{{ hike.Content }}</td>
                 <td>
@@ -37,17 +35,17 @@
                 <td>{{ hike.elevationLoss }}</td>
                 <td>{{ hike.gpsCoordonate }}</td>
                 <td>
-                    <a href="{{ path('app_hike_show', {'id': hike.id}) }}">show</a>
-                    <a href="{{ path('app_hike_edit', {'id': hike.id}) }}">edit</a>
+
+                    <a href="{{ path('app_hike_edit', {'id': hike.id}) }}">Edition</a>
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="9">no records found</td>
+                <td colspan="9">Pas de résultat</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <a href="{{ path('app_hike_new') }}">Create new</a>
+    <a href="{{ path('app_hike_new') }}">Ajout</a>
 {% endblock %}

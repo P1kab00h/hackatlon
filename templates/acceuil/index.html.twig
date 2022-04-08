@@ -1,0 +1,61 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Acceuil{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/accueil.css') }}">
+{% endblock %}
+
+{% block body %}
+    <main>
+        <section>
+            <section class="hero_accueil">
+                <video loop="loop" autoplay="autoplay" muted>
+                    <source src="{{ asset('video/productionID_4909242.mp4') }}" />
+                </video>
+
+                <div class="text_video">
+                    <!-- <h1><img src="assets/img/LogoRH.png" alt="image de mon logo en grande taille"></h1> -->
+                    <h1>Découvrez les plus belles randonnées<br> pédestres de l'Hérault.</h1>
+                    <a class="btn_decouvrir" href="/randonnee">Découvrir</a>
+                    <!-- <img src="assets/img/down.png" alt="logo avec une fleche vers le bas" class="img_scroll"> -->
+                </div>
+            </section>
+
+            <!---------------------------------------- contener réseaux ------------------------------------->
+            <div class="nous_suivre">
+                <p class="para_noussuivre">NOUS SUIVRE</p>
+                <a href=""><img alt="icone Facebook" class="icones_noussuivre" src={{ asset('img/facebook-48.png') }}></a>
+                <a href=""><img alt="icone Instagram" class="icones_noussuivre" src={{ asset('img/instagram-48.png') }}></a>
+            </div>
+        </section>
+
+        <!---------------------------------------- contener nouveautés ------------------------------------->
+        <section class="nouveautes">
+            <p class="para_nouveautes">/ Les nouveautés /</p>
+
+            <section class="contener_grid">
+                <div class="grid_accueil">
+                    <div class="img_1 contener_img">
+                        <img alt="image randonnée cirque de Mourèze" class="zoom img_grid" src={{ asset('img/moureze.jpg') }}>
+                        <a href="" title="cliquer ici" class="text_img">Le cirque de Mouréze</a>
+                    </div>
+                    <div class="img_2 contener_img">
+                        <img alt="image randonnée la grotte aux fées Montpeyroux" class="zoom img_grid" src={{ asset('img/terre_rouge.jpg') }}>
+                        <a href="" title="cliquer ici" class="text_img2">Le Canyon du diable</a>
+                    </div>
+                    <div class="img_3 contener_img">
+                        <img alt="image de randonnée le Roc de la vigne" class="zoom img_grid" src={{ asset('img/roc_de_la_vigne.jpg') }}>
+                        <a href="" title="cliquer ici" class="text_img2">Le Roc de la vigne</a>
+                    </div>
+                </div>
+            </section>
+
+            <div class="wrapper_contener-bouton contener_bouton">
+                <h2>/ Avec Rando Heros choisissez<br>votre randonnée en quelques clics /</h2>
+                <a href="/randonnee" class="btn_choisir">choisir ma randonnée</a>
+            </div>
+        </section>
+    </main>
+
+{% endblock %}

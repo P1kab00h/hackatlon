@@ -1,0 +1,67 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/style_rando-fmd.css') }}">
+{% endblock %}
+
+
+{% block body %}
+    <main>
+        <section class="hero_facile"></section>
+        <div class="nous_suivre">
+            <p class="para_noussuivre">NOUS SUIVRE</p>
+            <a href=""><img src='{{ asset("img/facebook-48.png") }}' alt="icone Facebook" class="icones_noussuivre"></a>
+            <a href=""><img src='{{ asset("img/instagram-48.png") }}' alt="icone Instagram" class="icones_noussuivre"></a>
+        </div>
+
+{#        <section>#}
+{#            <img src='{{ asset("img/icone_vert.png") }}' alt="icone rando facile" class="icone_facile">#}
+{#            <div class="titre_niveau">#}
+{#                <a href="randonnee_difficile"><img src='{{ asset("img/flechel.png") }}' class="flechel" title="voir le niveau difficile"></a>#}
+{#                <p class="para_titre">Niveau facile</p>#}
+{#                <a href="randonnee_moyenne"><img src='{{ asset("img/flecher.png") }}' class="flecher" title="voir le niveau moyen"></a>#}
+{#            </div>#}
+{#        </section>#}
+
+        <section class="center">
+            <section class="grid_rando">
+                <table class="table">
+                    <tbody>
+                    <tr>
+                        <th>Nom</th>
+                        <td>{{ hike.name }}</td>
+                    </tr>
+                    <tr>
+                        <th>Description</th>
+                        <td>{{ hike.Content }}</td>
+                    </tr>
+                    <tr>
+                        <th>Distance</th>
+                        <td>{{ hike.length }}</td>
+                    </tr>
+                    <tr>
+                        <th>Durée</th>
+                        <td>{{ hike.duration }}</td>
+                    </tr>
+                    <tr>
+                        <th>Dénivelée positif</th>
+                        <td>{{ hike.elevationGain }}</td>
+                    </tr>
+                    <tr>
+                        <th>Dénivelée négatif</th>
+                        <td>{{ hike.elevationLoss }}</td>
+                    </tr>
+                    <tr>
+                        <th>Coordonnées GPS</th>
+                        <td>{{ hike.gpsCoordonate }}</td>
+                    </tr>
+                    </tbody>
+                </table>
+
+                <a href="{{ path('app_randonnee') }}">Retour à la liste</a>
+            </section>
+        </section>
+    </main>
+    {% endblock %}

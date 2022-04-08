@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use App\Repository\HikeImagesRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 #[ORM\Entity(repositoryClass: HikeImagesRepository::class)]
 class HikeImages
@@ -11,9 +12,11 @@ class HikeImages
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column(type: 'integer')]
+    #[Groups('hike:read')]
     private $id;
 
     #[ORM\Column(type: 'string', length: 255)]
+    #[Groups('hike:read')]
     private $name;
 
     #[ORM\ManyToOne(targetEntity: Hike::class, inversedBy: 'hikeImages')]

@@ -1,9 +1,9 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hike{% endblock %}
+{% block title %}Randonnée{% endblock %}
 
 {% block body %}
-    <h1>Hike</h1>
+    <h1>Randonnée</h1>
 
     <table class="table">
         <tbody>
@@ -16,39 +16,39 @@
                 </td>
             </tr>
             <tr>
-                <th>Name</th>
+                <th>Nom</th>
                 <td>{{ hike.name }}</td>
             </tr>
             <tr>
-                <th>Content</th>
+                <th>Description</th>
                 <td>{{ hike.Content }}</td>
             </tr>
             <tr>
-                <th>Length</th>
+                <th>Distance</th>
                 <td>{{ hike.length }}</td>
             </tr>
             <tr>
-                <th>Duration</th>
+                <th>Durée</th>
                 <td>{{ hike.duration }}</td>
             </tr>
             <tr>
-                <th>Elevation_gain</th>
+                <th>Dénivelée positif</th>
                 <td>{{ hike.elevationGain }}</td>
             </tr>
             <tr>
-                <th>Elevation_loss</th>
+                <th>Dénivelée négatif</th>
                 <td>{{ hike.elevationLoss }}</td>
             </tr>
             <tr>
-                <th>Gps_coordonate</th>
+                <th>Coordonnées GPS</th>
                 <td>{{ hike.gpsCoordonate }}</td>
             </tr>
         </tbody>
     </table>
 
-    <a href="{{ path('app_hike_index') }}">back to list</a>
+    <a href="{{ path('app_hike_index') }}">Retour à la liste</a>
 
-    <a href="{{ path('app_hike_edit', {'id': hike.id}) }}">edit</a>
+    <a href="{{ path('app_hike_edit', {'id': hike.id}) }}">édition</a>
 
     {{ include('hike/_delete_form.html.twig') }}
 {% endblock %}

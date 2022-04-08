@@ -1,0 +1,107 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Les Randonnées{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/style_randonnees.css') }}">
+{% endblock %}
+
+{% block body %}
+<main class="main">
+    <section class="hero_randonnees"></section>
+    <div class="nous_suivre">
+        <p class="para_noussuivre">NOUS SUIVRE</p>
+        <a href=""><img src='{{ asset("img/facebook-48.png") }}' alt="icone Facebook" class="icones_noussuivre"></a>
+        <a href=""><img src='{{ asset("img/instagram-48.png") }}' alt="icone Instagram" class="icones_noussuivre"></a>
+    </div>
+
+    <section class="background_beige">
+        <p class="trouver">Trouver votre rando en trois étapes !</p>
+        <section class="etapes wrapper_etapes">
+            <div class="etape_1 shadow_white">
+                <img src='{{ asset("img/number-one_icon-icons.com_66514.png") }}' alt="icone étape numero 1" class="numero_etapes">
+                <p class="para_etape">Lire le descriptif ci-dessous de chaque niveau, puis sélectionner celui qui est le plus adaptés à votre condition physique.<br><br> En cas de doute, nous vous conseillons de choisir un niveau en dessous.</p>
+            </div>
+
+            <div class="etape_2 shadow_white">
+                <img src='{{ asset("img/number-two_icon-icons.com_66513.png") }}' alt="icone étape numero 2" class="numero_etapes">
+                <p class="para_etape">Une fois votre niveau choisi, vous pouvez cliquer sur le bouton Fiches Rando correspondant à votre condition afin d'être redirigé vers des randonnées vous correspondant.<br><br>
+                    Chaque niveau est représenté par une icône de couleur :</p>
+
+                <section class="flex_icone">
+                    <div>
+                        <img src='{{ asset("img/icone2.png") }}' alt="image icone niveau facile" class="icones">
+                        <p class="style-text-icone">Niveau facile</p>
+                    </div>
+
+                    <div class="margin-cotes">
+                        <img src='{{ asset("img/icone1.png") }}' alt="image icone niveau moyen" class="icones">
+                        <p class="style-text-icone">Niveau moyen</p>
+                    </div>
+
+                    <div>
+                        <img src='{{ asset("img/icone3.png") }}' alt="image icone niveau difficile" class="icones">
+                        <p class="style-text-icone">Niveau difficile</p>
+                    </div>
+                </section>
+            </div>
+
+            <div class="etape_3 shadow_white">
+                <img src='{{ asset("img/number-three_icon-icons.com_66512.png") }}' alt="icone étape numero 3" class="numero_etapes">
+                <p class="para_etape">Vous avez fait votre choix ? <br><br>vous pouvez dès à présent sélectionner des randonnées en toute sérénité!<br><br> Bonne rando! </p>
+            </div>
+        </section>
+    </section>
+
+    <!-- <section class="gallerie_img">
+        <img src="assets/img/gallerie1.png" alt="" class="img_gallerie">
+        <img src="assets/img/gallerie2.png" alt="" class="img_gallerie">
+        <img src="assets/img/gallerie3.png" alt="" class="img_gallerie">
+        <img src="assets/img/gallerie4.png" alt="" class="img_gallerie">
+    </section> -->
+
+    <section class="contener_niveaux">
+        <p class="texte_niveau">Maintenant à vous de choisir !</p>
+        <section class="wrapper_niveaux les_niveaux">
+            <div class="niveau_facile color_backgrd1">
+                <img src='{{ asset("img/icone2.png") }}' alt="image icone niveau facile" class="icones_choix">
+                <p class="vert">NIVEAU FACILE</p>
+                <p class="vert separateur">Pour qui ?</p>
+                <div class="taille_para">
+                    <p class="cond_descr1">DESCRIPTION :</p>
+                    <p class="text-style">Sentiers larges et bien entretenus, avec des pentes peu soutenues. <br>Idéal pour les promenades en famille.</p>
+                    <p class="cond_descr1">CONDITION PHYSIQUE:</p>
+                    <p class="text-style">Je suis en forme. Je pratique une activité sportive occasionnellement.</p>
+                    <a href="randonnee_facile" class="bouton">Fiches Rando</a>
+                </div>
+            </div>
+
+            <div class="niveau_moyen marge_lr color_backgrd2">
+                <img src='{{ asset("img/icone1.png") }}' alt="icone facile" class="icones_choix">
+                <p class="bleu">NIVEAU MOYEN</p>
+                <p class="bleu separateur">Pour qui ?</p>
+                <div class="taille_para">
+                    <p class="cond_descr2">DESCRIPTION :</p>
+                    <p class="text-style">Sentiers de montagne confortables ne présentant pas de grosses difficultés techniques.
+                        Parcours idéal pour la découverte de la randonnée sur un ou plusieurs jours</p>
+                    <p class="cond_descr2">CONDITION PHYSIQUE:</p>
+                    <p class="text-style">J'ai une condition physique correcte. Je pratique une activité sportive régulièrement. J’aime me dépasser sur des efforts pas trop longs et j’ai besoin de repos entre les activités. Je pratique une activité sportive occasionnellement.</p>
+                    <a href="randonnee_moyenne" class="bouton">Fiches Rando</a>
+                </div>
+            </div>
+
+            <div class="niveau_difficile color_backgrd3">
+                <img src='{{ asset("img/icone3.png") }}' alt="icone facile" class="icones_choix">
+                <p class="rouge">NIVEAU DIFFICILE</p>
+                <p class="rouge separateur">Pour qui ?</p>
+                <div class="taille_para">
+                    <p class="cond_descr1">DESCRIPTION :</p>
+                    <p class="text-style">Terrains de montagne variés pouvant présenter des difficultés techniques (passages aménagés et sécurisés, courtes portions d’échelles) ou des passages exposés au vide. Elle peut se dérouler hors des sentiers et sur des terrains difficiles type pierriers.</p>
+                    <p class="cond_descr1">CONDITION PHYSIQUE:</p>
+                    <p class="text-style">Je suis en forme. J'ai une très bonne condition physique. Je pratique une activité sportive plusieurs fois par semaine. J’ai l’envie de me dépasser sur des efforts longs et je peux endurer la fatigue dans une certaine mesure.</p>
+                    <a href="randonnee_difficile" class="bouton">Fiches Rando</a>
+                </div>
+            </div>
+        </section>
+    </section>
+{% endblock %}

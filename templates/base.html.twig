@@ -1,10 +1,24 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
-        {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+
+    <title>{% block title %}Bienvenue sur Rando Heros{% endblock %}</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Cormorant:wght@300&family=Londrina+Outline&family=Roboto&family=Titan+One&family=Tourney:ital,wght@0,100;1,100&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+
+    <link rel="stylesheet" href="{{ asset('css/style_randonnees.css') }}">
+
+    <script defer src={{ asset('js/script.js') }}></script>
+
         {% block stylesheets %}
             {{ encore_entry_link_tags('app') }}
         {% endblock %}
@@ -12,8 +26,31 @@
         {% block javascripts %}
             {{ encore_entry_script_tags('app') }}
         {% endblock %}
+
+    <header class="header">
+        <nav class="wrapper_header ">
+            <a href="/"><img class="logo padding_logo" alt = `image de mon logo` src={{ asset("img/LogoRH2.png")}}></a>
+            <div class="contener_a">
+                <a class="a_nav_rando" href="/">ACCUEIL</a>
+                <a class="a_nav_rando" href="/randonnee">RANDONNEES</a>
+                <a href="mailto: laetitia.vettore86@gmail.com" class="a_nav_rando">CONTACT</a>
+            </div>
+        </nav>
+    </header>
     </head>
     <body>
         {% block body %}{% endblock %}
+
+        <footer>
+            <section class="wrapper_footer flex_footer">
+                <img class="logo" src={{ asset("img/LogoRH.png") }}>
+                <p class="copyright">©2022 Rando Heros. All right reserved.</p>
+                <div class="contener_lien">
+                    <a href="" class="lien_footer">Mention légales |</a>
+                    <a href="" class="lien_footer">CGU |</a>
+                    <a href="" class="lien_footer">Politique de confidentialité</a>
+                </div>
+            </section>
+        </footer>
     </body>
 </html>

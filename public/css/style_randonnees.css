@@ -1,0 +1,256 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*-------------------------------------------------------main*/
+
+.hero_randonnees{
+    width: 100%;
+    background-image: url(../img/pexels-pille-kirsi-1009355.jpg);
+    background-position: bottom;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 75vh;
+}
+
+/*--------------------------nous suivre--------------------------*/
+
+.nous_suivre{
+    width: 50px;
+    position: fixed;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    background-color: black;
+    padding: 20px;
+    z-index: 1;
+}
+
+.para_noussuivre{
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    color: white;
+    font-size: 15px;
+}
+
+.icones_noussuivre{
+    width: 30px;
+    padding-left: 10px;
+    padding-top: 20px;
+}
+
+/*--------------------------trouver -------------------------*/
+.background_beige{
+    height: 55vh;
+    position: relative;
+    background-color: #ede0d4;
+}
+
+.trouver{
+    position: absolute;
+    color: #ffffff;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 60px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 100px;
+    top: -400px;
+    left: 410px;
+}
+
+/*-------------------------123------------------------------------*/
+.wrapper_etapes{
+    max-width: 1500px;
+    margin: 0 auto;
+}
+
+.etapes{
+    width: 100%;
+    position: absolute;
+    top: -200px;
+    left: 200px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 50px;
+}
+
+.numero_etapes{
+    display: block;
+    margin: 0 auto;
+    width: 100px;
+    padding-bottom: 60px;
+}
+
+.etape_1, .etape_2, .etape_3{
+    max-width: 470px;
+    background-color: white;
+    padding: 50px;
+}
+
+.para_etape{
+    max-width: 350px;
+    font-size: 20px;
+    text-align: justify;
+    color: rgb(0, 0, 0);
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.flex_icone{
+    display: flex;
+    padding: 25px 0 0 0px;
+}
+
+.icones{
+    display: block;
+    margin: 0 auto;
+    width: 50px;
+}
+
+.style-text-icone{
+    text-align: center;
+    font-size: 15px;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.margin-cotes{
+    margin: 0 23px;
+}
+
+/*-------------------------------------------------------------*/
+.gallerie_img{
+    width: 100%;
+    position: absolute;
+    text-align: center;
+}
+
+.img_gallerie{
+    /* width: 100%;
+    height: 100%;
+    position: absolute; */
+    display: inline-block; 
+}
+
+/*------------------------------------------------------------*/
+.wrapper_niveaux{
+    /* max-width: 1800px; */
+    margin: 0 auto;
+}
+
+.contener_niveaux{
+    background-color: rgb(255, 255, 255);
+    padding-bottom: 100px;
+
+} 
+
+.texte_niveau{
+    color: rgb(0, 0, 0);
+    text-align: center;
+    font-size: 45px;
+    font-family: 'Lobster', cursive;
+    padding: 90px 0 90px 0;   
+}
+
+.les_niveaux{
+    display: flex;
+    justify-content: center;
+}
+
+.color_backgrd1{
+    width: 25%;
+    padding: 245px 50px 50px 50px;
+    background: #ffffff;
+    box-shadow:  20px 20px 60px #d9d9d9,
+             -20px -20px 60px #ffffff;
+}
+
+.color_backgrd2{
+    width: 25%;
+    color: rgb(0, 0, 0);
+    margin: 0 50px 0 50px;
+    padding: 100px 50px 50px 50px;
+    background: #ffffff;
+    box-shadow:  20px 20px 60px #d9d9d9,
+             -20px -20px 60px #ffffff;
+}
+
+.color_backgrd3{
+    width: 25%;
+    color: rgb(0, 0, 0);
+    padding: 50px;
+    background: #ffffff;
+    box-shadow:  20px 20px 60px #d9d9d9,
+             -20px -20px 60px #ffffff;
+}
+
+.color_backgrd1:hover, .color_backgrd2:hover, .color_backgrd3:hover{
+    background-color: #f1f1f1;
+}
+
+.niveau_facile, .niveau_moyen, .niveau_difficile{
+    font-size: 25px;
+    font-family: 'Source Sans Pro', sans-serif;
+} 
+
+.icones_choix{
+    display: block;
+    width: 60px;
+    margin: 0 auto;
+    padding-bottom: 30px;
+}
+
+.cond_descr1{
+    color: #dc923b;
+    font-size: 25px;
+    font-family: 'Source Sans Pro', sans-serif;
+    text-align: center;
+    font-weight: bold;
+    padding: 50px 0 15px 0; 
+}
+
+.cond_descr2{
+    color: #dc923b;
+    font-size: 25px;
+    font-family: 'Source Sans Pro', sans-serif;
+    text-align: center;
+    font-weight: bold;
+    padding: 50px 0 15px 0; 
+}
+
+.text-style{
+    margin: auto;
+    text-align:justify;
+    font-size: 20px;
+}
+
+.bouton{
+    display: block;
+    margin: 0 auto;
+    width: 190px;
+    font-size: 20px;
+    font-family: 'Source Sans Pro', sans-serif;
+    border: 2px solid rgb(0, 0, 0);
+    padding: 15px 30px 15px 30px;
+    margin-top: 50px;
+    text-decoration: none;
+    text-align: center;
+    color: rgb(0, 0, 0);
+}
+
+.bouton:hover{
+    color: white;
+    background-color: black;
+    border: 2px solid rgb(0, 0, 0);
+}
+
+.vert, .bleu, .rouge{
+    color: rgb(0, 0, 0);
+    font-family: 'Source Sans Pro', sans-serif;
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+}
+

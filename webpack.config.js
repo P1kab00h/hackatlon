@@ -63,6 +63,8 @@ Encore
 
     // uncomment if you use React
     .enableReactPreset()
+    .addEntry('js/randosNiveauRender', './assets/js/react/randosNiveauRender.js')
+
 
     // uncomment to get integrity="..." attributes on your script & link tags
     // requires WebpackEncoreBundle 1.4 or higher

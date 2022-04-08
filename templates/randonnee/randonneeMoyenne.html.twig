@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Les Randonnées Moyenne{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/style_rando-fmd.css') }}">
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    {# appel de notre rendu react #}
+    <script>const LEVEL="moyen";</script>
+    {{ encore_entry_script_tags('js/randosNiveauRender') }}
+{% endblock %}
+
+{% block body %}
+    <main>
+        <section class="hero_moyen"></section>
+        <div class="nous_suivre">
+            <p class="para_noussuivre">NOUS SUIVRE</p>
+            <a href=""><img src='{{ asset("img/facebook-48.png") }}' alt="icone Facebook" class="icones_noussuivre"></a>
+            <a href=""><img src='{{ asset("img/instagram-48.png") }}' alt="icone Instagram" class="icones_noussuivre"></a>
+        </div>
+
+        <section>
+            <img src='{{ asset("img/icone_bleu.png") }}' alt="icone rando moyenne" class="icone_facile">
+            <div class="titre_niveau">
+                <a href="randonnee_facile"><img src='{{ asset("img/flechel.png") }}' class="flechel" title="voir le niveau facile"></a>
+                <p class="para_titre">Niveau Moyen</p>
+                <a href="randonnee_difficile"><img src='{{ asset("img/flecher.png") }}' class="flecher" title="voir le niveau difficile"></a>
+            </div>
+        </section>
+
+        <section class="center">
+            <section id="randoDisplay" class="grid_rando">
+
+            </section>
+        </section>
+    </main>
+    {% endblock %}
