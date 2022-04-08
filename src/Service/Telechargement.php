@@ -16,6 +16,7 @@ class Telechargement
     public function __construct(ContainerInterface $container, SluggerInterface $slugger)
     {
         $this->container = $container;
+        $this->slugger = $slugger;
 
     }
 

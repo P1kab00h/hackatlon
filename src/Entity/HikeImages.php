@@ -20,6 +20,7 @@ class HikeImages
     private $name;
 
     #[ORM\ManyToOne(targetEntity: Hike::class, inversedBy: 'hikeImages')]
+    #[ORM\JoinColumn(nullable: false)]
     private $hike;
 
     public function getId(): ?int

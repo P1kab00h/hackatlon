@@ -16,6 +16,7 @@
                 <th>Dénivelée positif</th>
                 <th>Dénivelée négatif</th>
                 <th>Coordonnées GPS</th>
+                <th>Image(s)</th>
                 <th>actions</th>
             </tr>
         </thead>
@@ -34,6 +35,16 @@
                 <td>{{ hike.elevationGain }}</td>
                 <td>{{ hike.elevationLoss }}</td>
                 <td>{{ hike.gpsCoordonate }}</td>
+
+                <td>
+                    {% for image in hike.hikeImages %}
+
+                        <div>
+                            <img src="{{ asset('/uploadImg/' ~ image.name) }}" alt="image" width="150">
+                        </div>
+                    {% endfor %}
+                </td>
+
                 <td>
 
                     <a href="{{ path('app_hike_edit', {'id': hike.id}) }}">Edition</a>

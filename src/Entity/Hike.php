@@ -50,6 +50,7 @@ class Hike
     #[Groups('hike:read')]
     private $difficulty;
 
+//    #[ORM\OneToMany(mappedBy: 'hike', targetEntity: HikeImages::class, orphanRemoval: true, cascade: ["persist"])]
     #[ORM\OneToMany(mappedBy: 'hike', targetEntity: HikeImages::class)]
     #[Groups('hike:read')]
     private $hikeImages;
