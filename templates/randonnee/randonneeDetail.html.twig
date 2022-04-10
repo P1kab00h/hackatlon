@@ -57,6 +57,18 @@
                         <th>Coordonnées GPS</th>
                         <td>{{ hike.gpsCoordonate }}</td>
                     </tr>
+
+                    <tr>
+                        <th>Image(s)</th>
+                        <td>
+                        {% for image in hike.hikeImages %}
+
+                            <div>
+                                <img src="{{ asset('/uploadImg/' ~ image.name) }}" alt="image" width="150">
+                            </div>
+                        {% endfor %}
+                    </tr>
+
                     </tbody>
                 </table>
 
