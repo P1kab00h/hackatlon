@@ -33,18 +33,13 @@ class HikeController extends AbstractController
         $hike = new Hike();
         $form = $this->createForm(HikeType::class, $hike);
         $form->handleRequest($request);
-
         if ($form->isSubmitted() && $form->isValid()) {
-
             // gestion des images (on récupère les images transmises)
             // dans la variables nous allons récupérer dans le form sous la propriétée 'images' les datas
             $images = $form->get('images')->getData();
             if($images) {
-
-
                 // Une boucle sera nécessaire sur les images (afin de gérer l'ajout multiple)
 //               foreach ($images as $image){
-
                 // On stocke le nom de l'image dans la BDD (pour rappel nous ne stockons pas de PJ en BDD)
                 // instance de UploadImages
                 $img = new HikeImages();
@@ -59,11 +54,9 @@ class HikeController extends AbstractController
                 //    private $hikeImages;
                 $entityManager->persist($img);
             }
-
             $hike->setNameSlugger($slugger->slug($hike->getName()));
             $entityManager->persist($hike);
             $entityManager->flush();
-
             $this->addFlash('notice', 'Nouvelle randonnée enregistré');
             return $this->redirectToRoute('app_hike_index', [], Response::HTTP_SEE_OTHER);
         }
@@ -83,13 +76,33 @@ class HikeController extends AbstractController
     }
 
     #[Route('/{id}/edit', name: 'app_hike_edit', methods: ['GET', 'POST'])]
-    public function edit(Request $request, Hike $hike, HikeRepository $hikeRepository, EntityManagerInterface $entityManager, SluggerInterface $slugger): Response
+    public function edit(Request $request, Hike $hike, HikeRepository $hikeRepository, EntityManagerInterface $entityManager, SluggerInterface $slugger, Telechargement $telechargement): Response
     {
         $form = $this->createForm(HikeType::class, $hike);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
 //            $hikeRepository->add($hike);
+            // gestion des images (on récupère les images transmises)
+            // dans la variables nous allons récupérer dans le form sous la propriétée 'images' les datas
+            $images = $form->get('images')->getData();
+            if($images) {
+                // Une boucle sera nécessaire sur les images (afin de gérer l'ajout multiple)
+//               foreach ($images as $image){
+                // On stocke le nom de l'image dans la BDD (pour rappel nous ne stockons pas de PJ en BDD)
+                // instance de UploadImages
+                $img = new HikeImages();
+                // On attribut un nom qui sera alors inscrit en BDD (nous utilisons la variable $fichier cf plus haut)
+                //puis on upload l'image avec la method créé
+                $hikeImageFileName = $telechargement->uploadImg($images);
+                $img->setName($hikeImageFileName);
+                $hike->addHikeImage($img);
+                //On persist la donnée (autre solution la cascade en 'persist' sur l'entity :
+                // //    #[ORM\OneToMany(mappedBy: 'hike', targetEntity: HikeImages::class, orphanRemoval: true, cascade: ["persist"])]
+                //    #[Groups('hike:read')]
+                //    private $hikeImages;
+                $entityManager->persist($img);
+            }
 
         $hike->setNameSlugger($slugger->slug($hike->getName()));
         $entityManager->persist($hike);

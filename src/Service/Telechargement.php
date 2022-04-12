@@ -2,7 +2,6 @@
 
 namespace App\Service;
 
-
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\HttpFoundation\File\Exception\FileException;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
@@ -17,7 +16,6 @@ class Telechargement
     {
         $this->container = $container;
         $this->slugger = $slugger;
-
     }
 
     public function uploadImg(UploadedFile $file)
@@ -29,7 +27,6 @@ class Telechargement
             // On copie ensuite le fichier dans le dossier upload, l'ordre des paramètres et OU, puis QUOI
             //on récupére le paramétre indiquant le chemin ou trouver le dossier upload (cf services.yaml)
             $file->move($this->getTargetDirectory()->getParameter('upload_directory'), $fileName);
-
         } catch (FileException $e) {
             // ... prise en charge des expeptions si un event se produit durant l'upload du fichier
             return null; // ici le retour sera null pour le moment
